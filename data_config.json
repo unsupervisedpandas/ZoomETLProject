@@ -1,0 +1,46 @@
+{
+  "extract": {
+    "API_KEY": "API_KEY",
+    "API_SECRET": "API_KEY",
+    "page_size": 300,
+    "period": "day",
+    "num_periods": 2,
+    "start_date": "2022-05-19",
+    "end_date": "today",
+    "download_path": "./Data/extracted_data.csv"
+  },
+  "transform": {
+  },
+  "load": {
+    "user": "username",
+    "password": "pass",
+    "account": "account_id",
+    "warehouse": "HOUSE_OF_LAUGHTON",
+    "database": "ZOOM_DB",
+    "schema": "ZOOM_SCHEMA",
+    "stage": "ZOOM_STAGE",
+    "days_to_stage": 5,
+    "datetime_columns": [
+      "date_time",
+      "call_end_time"
+    ]
+  },
+  "log": {
+    "file_path": "./ETLLog.log",
+    "col_names": [
+      "LOG_DATETIME",
+      "THREAD",
+      "FILENAME",
+      "LINE_NUMBER",
+      "FUNCTION",
+      "LEVEL",
+      "MESSAGE"
+    ],
+    "database": "LOG_DB",
+    "schema": "LOG_SCHEMA",
+    "table_name": "ZOOM_LOG",
+    "datetime_columns": [
+      "Log_Datetime"
+    ]
+  }
+}
